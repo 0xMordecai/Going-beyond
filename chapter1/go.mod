@@ -1,4 +1,4 @@
-module chapter1
+module external-package
 
 go 1.22.2
 
