@@ -2,9 +2,17 @@ package main
 
 import (
 	"errors"
+	"fmt"
 )
 
-func main() {}
+func main() {
+	var guess_num uint = 100
+	answer, err := guess(guess_num)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Println("Number is", answer)
+}
 
 func guess(number uint) (answer bool, err error) {
 	if number > 99 {
