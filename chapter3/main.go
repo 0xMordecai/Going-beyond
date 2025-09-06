@@ -1,16 +1,15 @@
 package main
 
 import (
-	"fmt"
-	"strconv"
+	"errors"
 )
 
-func main() {
-	str := "123456789"
-	// str := "hello" // <----- will cause an error
-	num, err := strconv.ParseInt(str, 10, 64)
-	if err != nil {
-		panic(err)
+func main() {}
+
+func guess(number uint) (answer bool, err error) {
+	if number > 99 {
+		err = errors.New("Number is larger than 100")
 	}
-	fmt.Println("Number is", num)
+	// check if guess is correct
+	return answer, err
 }
