@@ -10,8 +10,12 @@ func main() {
 	answer, err := guess(guess_num)
 	if err != nil {
 		panic(err)
+	} else if answer == true {
+		fmt.Printf("your guess is correct")
+	} else {
+		fmt.Printf("your guess is incorrect")
 	}
-	fmt.Println("Number is", answer)
+
 }
 
 func guess(number uint) (answer bool, err error) {
