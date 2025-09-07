@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"log"
 )
 
 func main() {
@@ -26,4 +27,10 @@ func guess(number uint) (answer bool, err error) {
 	return answer, err
 }
 
-// Using helpers to simplify Repetitive Error Handling
+// Using -->helpers<-- to simplify Repetitive Error Handling
+
+func check(err error, msg string) {
+	if err != nil {
+		log.Println("Error encountered:", msg)
+	}
+}
