@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	var guess_num uint = 100
+	var guess_num uint = 55
 	answer, err := guess(guess_num)
 	if err != nil {
 		panic(err)
