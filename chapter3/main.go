@@ -25,3 +25,5 @@ func guess(number uint) (answer bool, err error) {
 	// check if guess is correct
 	return answer, err
 }
+
+// Using helpers to simplify Repetitive Error Handling
