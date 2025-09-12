@@ -7,6 +7,11 @@ import (
 	"net/http"
 )
 
+type Person struct {
+	FirstName string
+	LastName  string
+}
+
 func helperUnmarshal() (person Person) {
 	r, err := http.Get("https://swapi.dev/api/people/1")
 	check(err, "Calling SW people API")
