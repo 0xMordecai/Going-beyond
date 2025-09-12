@@ -30,6 +30,10 @@ func (err *ConnectionError) Error() string {
 	return fmt.Sprintf("Error connecting to %s at port %d", err.Host, err.Port)
 }
 
+// Remember, to make it an error, the struct should have an Error method.
+// To allow the struct to be unwrapped, we need to implement an Unwrap
+// function.
+
 func (err *ConnectionError) Unwrap() error {
 	return err.Err
 }
