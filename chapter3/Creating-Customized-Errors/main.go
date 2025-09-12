@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 
 }
@@ -30,3 +32,11 @@ func (m CommsError) Error() string {
 
 // You want to provide information about where the error came from. To do
 // this, you can create a custom error to provide the information.
+type SyntaxError struct {
+	Line int
+	Col  int
+}
+
+func (err *SyntaxError) Error() string {
+	return fmt.Sprintf("Error at line %d, column %d", err.Line, err.Col)
+}
