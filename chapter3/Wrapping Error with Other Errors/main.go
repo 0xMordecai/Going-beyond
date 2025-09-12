@@ -20,8 +20,12 @@ func ErrUnwrap() error {
 
 // Another way of wrapping an error with an error is to create a customized
 // error struct like this
-type Connection struct {
+type ConnectionError struct {
 	Host string
 	Port int
 	Err  error
+}
+
+func (err *ConnectionError) Error() string {
+	return fmt.Sprintf("Error connecting to %s at port %d", err.Host, err.Port)
 }
