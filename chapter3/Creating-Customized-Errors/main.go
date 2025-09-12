@@ -18,3 +18,11 @@ func Demo() {
 	   -->			err := fmt.Errorf("Syntax error in the code at line %d", line)
 	*/
 }
+
+// Implementing the Error() Interface
+
+type CommsError struct{}
+
+func (m CommsError) Error() string {
+	return "An error happened during data transfer."
+}
