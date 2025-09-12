@@ -17,3 +17,11 @@ func ErrUnwrap() error {
 	err1 := errors.Unwrap(err2)
 	return err1
 }
+
+// Another way of wrapping an error with an error is to create a customized
+// error struct like this
+type Connection struct {
+	Host string
+	Port int
+	Err  error
+}
