@@ -29,3 +29,7 @@ type ConnectionError struct {
 func (err *ConnectionError) Error() string {
 	return fmt.Sprintf("Error connecting to %s at port %d", err.Host, err.Port)
 }
+
+func (err *ConnectionError) Unwrap() error {
+	return err.Err
+}
