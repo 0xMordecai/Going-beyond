@@ -19,5 +19,9 @@ func count(r io.Reader) int {
 
 	// Define the scanner split type to words (default is split by lines)
 	scanner.Split(bufio.ScanWords)
-	return 1
+
+	// Defining a counter
+	wc := 0
+
+	return wc
 }
