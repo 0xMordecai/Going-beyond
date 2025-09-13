@@ -11,7 +11,7 @@ func TestCountWords(t *testing.T) {
 
 	exp := 4
 
-	res := count(b)
+	res := count(b, false)
 	// 	If this function returns anything other than 4, the
 	// test doesn’t pass and we raise an error that shows what we expected and
 	// what we actually got instead.
