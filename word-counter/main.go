@@ -28,8 +28,10 @@ func count(r io.Reader, countLines bool, countBytes bool) int {
 	scanner := bufio.NewScanner(r)
 	// If the count lines flag is not set, we want to count words so we define
 	// Define the scanner split type to words (default is split by lines)
-	if !countLines {
+	if !countLines && !countBytes {
 		scanner.Split(bufio.ScanWords)
+	} else if countBytes {
+		scanner.Bytes()
 	}
 
 	// Defining a counter
