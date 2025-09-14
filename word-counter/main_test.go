@@ -11,7 +11,7 @@ func TestCountWords(t *testing.T) {
 
 	exp := 4
 
-	res := count(b, false)
+	res := count(b, false, false)
 	// 	If this function returns anything other than 4, the
 	// test doesn’t pass and we raise an error that shows what we expected and
 	// what we actually got instead.
@@ -23,7 +23,7 @@ func TestCountWords(t *testing.T) {
 func TestCountLines(t *testing.T) {
 	b := bytes.NewBufferString("word1 word2 word3\nline2\nline3 word1")
 	exp := 3
-	res := count(b, true)
+	res := count(b, true, false)
 	if res != exp {
 		t.Errorf("Expected %d, got %d instead.\n", exp, res)
 	}
