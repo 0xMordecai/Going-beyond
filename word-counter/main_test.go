@@ -30,7 +30,7 @@ func TestCountLines(t *testing.T) {
 }
 
 // testCountBytes test count function set to count bytes
-func testCountBytes(t *testing.T) {
+func TestCountBytes(t *testing.T) {
 	b := bytes.NewBufferString("123456789")
 	exp := 9
 	res := count(b, false, true)
